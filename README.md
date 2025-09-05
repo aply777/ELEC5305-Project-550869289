@@ -8,6 +8,19 @@ Extract relevant audio features for speaker characterisation<br>
 Implement a baseline machine learning classifier (SVM/KNN)<br>
 Evaluate classifier performance on a small speech dataset<br>
 Optionally explore more advanced models (e.g., CNN) if time permits
+## Methods
+**Pre-processing**<br>
+Normalise audio signals using functions from MATLAB<br>
+Remove leading/trailing silence using energy thresholding<br>
+**Feature Extraction**<br>
+Extract MFCC features using mfcc()<br>
+Estimate pitch using the pitch function<br>
+Generate spectrograms<br>
+**Classification**<br>
+Train a Support Vector Machine classifier<br>
+Alternatively, use K-Nearest Neighbours <br>
+**Evaluation**<br>
+Compute accuracy and confusion matrix
 ## Data
 Public speech datasets such as VoxCeleb
 ## Reference
