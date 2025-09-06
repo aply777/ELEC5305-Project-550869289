@@ -22,9 +22,11 @@ Alternatively, use K-Nearest Neighbours <br>
 **Evaluation**<br>
 Compute accuracy and confusion matrix
 ## Data
-Public speech datasets such as VoxCeleb
+Public speech datasets such as VoxCeleb, TIMIT
 ## Reference
 Speaker Identification Using Custom SincNet Layer and Deep Learning:<br>
 https://au.mathworks.com/help/deeplearning/ug/speaker-identification-using-custom-sincnet-layer-and-deep-learning.html<br>
 VoxCeleb:<br>
 https://github.com/a-nagrani/VGGVox<br>
+TIMIT<br>
+https://github.com/datasets-mila/datasets--timit/tree/master
