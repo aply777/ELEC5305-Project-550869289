@@ -1,32 +1,46 @@
-# SpeakerID-Project
-Speaker Identification and Characterisation using Audio ML
-## Project title (from Canvas ELEC5305)
-Speaker identification and characterization:
-Speech recognition has focussed on the lexical content of speech (i.e. the words) and worked quite hard to exclude other aspects of the signal. Yet when we listen to speech, we infer considerable information about the speaker, such as gender, age, country of origin etc. All this information should be present in the signal, it is simply a matter of finding the right features and training the right recognizer.
+# Speaker Recognition and Audio Classification Using SVM, CNN (AlexNet), and ECAPA-TDNN
+## Project title
+Speaker identification:
+This project explores a complete pipeline of speaker‐related audio classification tasks using the TIMIT corpus, including Speaker Identification (SI), Gender Classification, and Dialect Region Recognition.
+Three modelling paradigms were implemented and compared.
+
 ## Objectives
 Extract relevant audio features for speaker characterisation<br>
-Implement a baseline machine learning classifier (SVM/KNN)<br>
+Implement a baseline machine learning classifier (SVM)<br>
 Evaluate classifier performance on a small speech dataset<br>
 Optionally explore more advanced models (e.g., CNN) if time permits
-## Methods
-**Pre-processing**<br>
-Normalise audio signals using functions from MATLAB<br>
-Remove leading/trailing silence using energy thresholding<br>
-**Feature Extraction**<br>
-Extract MFCC features using mfcc()<br>
-Estimate pitch using the pitch function<br>
-Generate spectrograms<br>
-**Classification**<br>
-Train a Support Vector Machine classifier<br>
-Alternatively, use K-Nearest Neighbours <br>
-**Evaluation**<br>
-Compute accuracy and confusion matrix
+
+## Method 1 — Traditional Machine Learning (MATLAB SVM)
+The project begins with classical feature-based speaker recognition.<br>
+	MFCC and Log-Mel features were extracted in MATLAB.
+  SVM was used for gender, dialect, and speaker classification.
+  Results showed that traditional MFCC + SVM retains strong phonetic cues, giving medium performance on dialect classification, but very limited performance on speaker identification.
+Code for SVM is named "SVM.mlx"
+
+## Method 2 - CNN-Based Feature Learning (AlexNet)
+Mel-spectrograms were generated from all TIMIT audio and used to train a CNN model:
+A multi-task AlexNet was trained for three tasks (SI, Gender, Dialect).
+The network shares convolutional layers and uses three separate classification heads.
+Demonstrated improved gender classification, but limited performance for dialect and speaker ID, mainly due to spectrogram downsampling and data scarcity.
+Code for converting audio into spectrogram is named "Sepc.mlx"
+Code for AlexNet classification is named "alexnet.py"
+
+## Method 3 — Modern Embedding-Based Model (ECAPA-TDNN with SpeechBrain)
+The final and most advanced approach uses pre-trained ECAPA-TDNN embeddings extracted with the SpeechBrain toolkit:
+Trained on VoxCeleb1 & VoxCeleb2, providing strong generalisation.
+ECAPA-TDNN achieved high accuracy in speaker identification (98.33%) and gender (99.58%), but dialect classification remained difficult due to the small phonetic differences in TIMIT.
+Code for fixing the WAV file is named "convertWav.py"
+Code for Method 3 is named "planB.py"
+
 ## Data
-Public speech datasets such as VoxCeleb, TIMIT
+Public speech datasets TIMIT
+
+## Conclusion
+The best performance belongs to ECAPA-TDNN, but regarding the dialect region classification, the performance could be further enhanced.
+
+## Notes
+The "alexnet.py" and "planB.py" code need to run with CUDA.
+
 ## Reference
-Speaker Identification Using Custom SincNet Layer and Deep Learning:<br>
-https://au.mathworks.com/help/deeplearning/ug/speaker-identification-using-custom-sincnet-layer-and-deep-learning.html<br>
-VoxCeleb:<br>
-https://github.com/a-nagrani/VGGVox<br>
 TIMIT:<br>
 https://github.com/datasets-mila/datasets--timit/tree/master
