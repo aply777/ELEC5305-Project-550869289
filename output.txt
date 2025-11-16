@@ -1,0 +1,4 @@
+This document shows the output of each method, except method 1, which is clearly shown in the report and the mlx file.
+The pth file for AlexNet is too big to upload to GitHub
+https://drive.google.com/file/d/1ayq4YG7Du9siWxQ5m_5XP76dIqCUUVwC/view?usp=sharing
+Here is the link for AlexNet's pth file, just in case you are interested
