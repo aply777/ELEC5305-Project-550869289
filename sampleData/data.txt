@@ -1,0 +1,13 @@
+The data section in here only includes part of the TIMIT data
+If you want to explore more, here is the link for downloading the TIMIT data
+https://github.com/datasets-mila/datasets--timit/tree/master
+Before you use TIMIT data for ECAPA-TDNN (method 3), don't forget to use the "convertWav.py" code to preprocess the wav file
+
+DRx samples on this page are used as a reference for the dialect regions difference in the TIMIT dataset
+which didn't include every speaker as the original TIMIT file, only one speaker represented each region
+if the sample wav file cannot be read, please refer "convertWav.py" code
+
+sampleFixedData(Test_DR4_FCRG0) is used as an example for convertWav.py output, which is the XX_fixed.wav
+
+sampleSpec(DR3) is the sample output for converting the audio signal into the spectrogram (Spec.mlx)
+
