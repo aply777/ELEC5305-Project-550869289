@@ -1,0 +1,11 @@
+The SVM.mlx is mainly about method 1 (MATLAB)
+
+The Spec.mlx and alexnet.py are about method 2
+
+convertWav.py and planB.py are about method 3
+
+Attention: alexnet.py and planB.py need to run with **CUDA**
+And please don't forget to change the file path in the code
+
+Any questions, please email me
+lpen0209@uni.sydney.edu.au
